@@ -1,7 +1,7 @@
 """Qdrant vector store connection, schema verification, and index management."""
 
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
 from qdrant_client.http.exceptions import UnexpectedResponse
@@ -119,6 +119,111 @@ class QdrantManager:
             except Exception as e:
                 # Payload index might already exist
                 logger.debug(f"Payload index on '{field_name}': {e}")
+
+    def get_collection_info(self):
+        """Fetch collection description and configuration from Qdrant."""
+        return self.client.get_collection(self.collection_name)
+
+    def ensure_sparse_vector(self, vector_name: Optional[str] = None) -> bool:
+        """Safely ensure the named sparse vector space exists in the collection.
+        
+        Preserves existing dense embeddings, payloads, and points without recreating.
+        
+        Args:
+            vector_name: Name of the sparse vector (defaults to config.sparse_vector_name).
+            
+        Returns:
+            bool: True if new sparse vector space was added; False if already present.
+        """
+        sparse_name = vector_name or self.config.sparse_vector_name
+        info = self.get_collection_info()
+        existing_sparse = info.config.params.sparse_vectors or {}
+
+        if sparse_name in existing_sparse:
+            logger.info(
+                f"Sparse vector '{sparse_name}' is already registered in "
+                f"collection '{self.collection_name}'."
+            )
+            return False
+
+        logger.info(
+            f"Migrating schema: registering sparse vector '{sparse_name}' "
+            f"in collection '{self.collection_name}' without modifying existing data."
+        )
+
+        try:
+            # Qdrant client create_vector_name API (Qdrant 1.18+)
+            self.client.create_vector_name(
+                collection_name=self.collection_name,
+                vector_name=sparse_name,
+                vector_name_config=models.SparseVectorNameConfig(
+                    sparse=models.SparseVectorConfig()
+                ),
+            )
+        except Exception as e:
+            logger.warning(
+                f"create_vector_name encountered: {e}. "
+                f"Falling back to update_collection(sparse_vectors_config=...)"
+            )
+            self.client.update_collection(
+                collection_name=self.collection_name,
+                sparse_vectors_config={
+                    sparse_name: models.SparseVectorParams()
+                },
+            )
+
+        # Verify registration succeeded
+        updated_info = self.get_collection_info()
+        registered = sparse_name in (updated_info.config.params.sparse_vectors or {})
+        if not registered:
+            raise RuntimeError(
+                f"Failed to register sparse vector '{sparse_name}' in collection '{self.collection_name}'."
+            )
+
+        logger.info(
+            f"Successfully registered sparse vector '{sparse_name}'. "
+            f"Total points preserved: {updated_info.points_count}"
+        )
+        return True
+
+    def update_point_sparse_vectors(
+        self,
+        updates: List[Tuple[str, List[int], List[float]]],
+        vector_name: Optional[str] = None,
+    ) -> int:
+        """Update sparse vectors on existing points without modifying dense vectors or payloads.
+        
+        Args:
+            updates: List of (point_id, indices, values) tuples.
+            vector_name: Target sparse vector name.
+            
+        Returns:
+            int: Number of points updated in Qdrant.
+        """
+        if not updates:
+            return 0
+
+        sparse_name = vector_name or self.config.sparse_vector_name
+        point_vectors = []
+        for point_id, indices, values in updates:
+            point_vectors.append(
+                models.PointVectors(
+                    id=point_id,
+                    vector={
+                        sparse_name: models.SparseVector(
+                            indices=indices,
+                            values=values,
+                        )
+                    },
+                )
+            )
+
+        self.client.update_vectors(
+            collection_name=self.collection_name,
+            points=point_vectors,
+            wait=True,
+        )
+        return len(point_vectors)
 
     def get_point_count(self) -> int:
         """Get the current point count in the collection."""

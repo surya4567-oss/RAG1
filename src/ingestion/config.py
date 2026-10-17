@@ -70,6 +70,11 @@ class PipelineConfig:
             "QDRANT_COLLECTION", "qa_knowledge"
         )
     )
+    qdrant_sparse_collection: str = field(
+        default_factory=lambda: os.getenv(
+            "QDRANT_SPARSE_COLLECTION", "qa_knowledge_sparse"
+        )
+    )
     qdrant_api_key: Optional[str] = field(
         default_factory=lambda: os.getenv("QDRANT_API_KEY") or None
     )
@@ -87,6 +92,22 @@ class PipelineConfig:
         )
     )
     embedding_dimension: int = 768
+
+    # Sparse embedding configuration
+    sparse_model_name: str = field(
+        default_factory=lambda: os.getenv("SPARSE_MODEL_NAME", "Qdrant/bm25")
+    )
+    sparse_vector_name: str = field(
+        default_factory=lambda: os.getenv("SPARSE_VECTOR_NAME", "bm25")
+    )
+    sparse_batch_size: int = field(
+        default_factory=lambda: int(os.getenv("SPARSE_BATCH_SIZE", "128"))
+    )
+    sparse_checkpoint_dir: Path = field(
+        default_factory=lambda: Path(
+            os.getenv("SPARSE_CHECKPOINT_DIR", "data/sparse_checkpoints")
+        )
+    )
 
     # Chunking configuration
     chunk_size: int = field(
@@ -119,10 +140,12 @@ class PipelineConfig:
         self.processed_dir = Path(self.processed_dir)
         self.quarantine_dir = Path(self.quarantine_dir)
         self.reports_dir = Path(self.reports_dir)
+        self.sparse_checkpoint_dir = Path(self.sparse_checkpoint_dir)
 
         self.processed_dir.mkdir(parents=True, exist_ok=True)
         self.quarantine_dir.mkdir(parents=True, exist_ok=True)
         self.reports_dir.mkdir(parents=True, exist_ok=True)
+        self.sparse_checkpoint_dir.mkdir(parents=True, exist_ok=True)
 
 
 default_config = PipelineConfig()

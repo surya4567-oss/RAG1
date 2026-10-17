@@ -3,12 +3,14 @@ langchain>=0.3.0
 langchain-core>=0.3.0
 langchain-community>=0.3.0
 langchain-text-splitters>=0.3.0
+langchain-groq>=0.2.0
 
 # Embeddings and Vector Store
 langchain-huggingface>=0.1.0
 sentence-transformers>=3.0.0
 qdrant-client>=1.11.0
 langchain-qdrant>=0.2.0
+fastembed>=0.4.0
 
 # Document loaders and formats
 pymupdf>=1.24.0

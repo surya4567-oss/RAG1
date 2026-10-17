@@ -12,7 +12,14 @@ ENV/
 env/
 
 # Environment variables
+# Environment files and secrets
 .env
+.env.*
+!.env.example
+
+# Large generated data
+data/chunks_for_colab.jsonl
+data/sparse_checkpoints/
 
 # Data outputs & persistence
 data/processed/
