@@ -34,7 +34,7 @@ def display_response(res, output_json: bool = False):
         print(
             f"Latency:         Total={m['total_duration_seconds']}s "
             f"(Route={m['routing_duration_seconds']}s, Retrieve={m['retrieval_duration_seconds']}s, "
-            f"Rerank={m['reranker_duration_seconds']}s, Gen={m['generation_duration_seconds']}s)"
+            f"Rerank={m.get('reranker_duration_seconds', 0.0)}s,Gen={m.get('generation_duration_seconds', 0.0)}s)"
         )
     if "router_intent" in res.metadata:
         print(f"Router Intent:   {res.metadata['router_intent']}")

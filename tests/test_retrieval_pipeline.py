@@ -42,6 +42,62 @@ def test_router_identifier_extraction():
     assert ids3.get("requirement_id") == "REQ-1924"
     assert ids3.get("error_code") == "ACCESSERROR"
 
+    q4 = "Show test cases under EPIC-22 and STORY-1618 found in B-5521"
+    ids4 = router.extract_regex_identifiers(q4)
+    assert ids4.get("epic") == "EPIC-22"
+    assert ids4.get("story") == "STORY-1618"
+    assert ids4.get("build_number") == "B-5521"
+
+    # Test SRS Functional Requirement ID formats
+    q5 = "Find details on requirement FR-PUR-003 and FR-COM-001"
+    ids5 = router.extract_regex_identifiers(q5)
+    assert ids5.get("requirement_id") == "FR-PUR-003"
+
+
+def test_router_document_type_normalization_and_modality_detection():
+    router = LLMQueryRouter(config=RetrievalConfig())
+
+    # Modality detection from question
+    q_screen = "Show screenshots for TC-014555"
+    ids_screen = router.extract_regex_identifiers(q_screen)
+    assert ids_screen.get("test_case_id") == "TC-014555"
+    assert ids_screen.get("document_type") == "screenshot_evidence"
+
+    q_log = "Retrieve failure logs for defect BUG-003596"
+    ids_log = router.extract_regex_identifiers(q_log)
+    assert ids_log.get("defect_id") == "BUG-003596"
+    assert ids_log.get("document_type") == "failure_log"
+
+    # Normalization of synonyms and plurals in proposed_filters
+    proposed = {
+        "document_type": "screenshots",
+        "has_error_message": "true",
+        "http_status": "404",
+        "regression": "false",
+    }
+    sanitized = router._validate_and_sanitize_filters(proposed, {})
+    assert sanitized["document_type"] == "screenshot_evidence"
+    assert sanitized["has_error_message"] is True
+    assert sanitized["http_status"] == 404
+    assert sanitized["regression"] is False
+
+    # Failure log synonym
+    proposed_log = {"document_type": "error_logs"}
+    sanitized_log = router._validate_and_sanitize_filters(proposed_log, {})
+    assert sanitized_log["document_type"] == "failure_log"
+
+
+def test_router_fallback_extracts_modality():
+    router = LLMQueryRouter(config=RetrievalConfig(groq_api_key=""))
+
+    out = router.route("Show screenshot for TC-014555")
+    assert out.validated_filters.get("test_case_id") == "TC-014555"
+    assert out.validated_filters.get("document_type") == "screenshot_evidence"
+
+    out_log = router.route("Find failure logs for BUG-003596")
+    assert out_log.validated_filters.get("defect_id") == "BUG-003596"
+    assert out_log.validated_filters.get("document_type") == "failure_log"
+
 
 def test_router_filter_sanitization_rejects_hallucinated_fields():
     router = LLMQueryRouter(config=RetrievalConfig())
@@ -236,3 +292,82 @@ def test_end_to_end_pipeline_mocked():
     assert len(result.evidence) == 1
     assert result.evidence[0].chunk_id == "chunk-tc-001"
     assert "total_duration_seconds" in result.metadata
+
+
+# -------------------------------------------------------------------------
+# Test 6: Metadata Filter Failure Automatically Switches Strategy
+# -------------------------------------------------------------------------
+def test_router_filter_failure_fallback():
+    router = LLMQueryRouter(config=RetrievalConfig(groq_api_key=""))
+
+    # When filter fails on a conceptual question, router switches to DENSE without filters
+    route_dense = router.route_on_filter_failure(
+        question="Explain how the invoice confirmation workflow operates",
+        failed_filters={"module": "Account"},
+    )
+    assert route_dense.strategy == RetrievalRoute.DENSE
+    assert route_dense.validated_filters == {}
+
+    # When filter fails on a mixed query, router switches to HYBRID without filters
+    route_hybrid = router.route_on_filter_failure(
+        question="Why did TC-000001 fail with AccessError?",
+        failed_filters={"test_case_id": "TC-000001"},
+    )
+    assert route_hybrid.strategy == RetrievalRoute.HYBRID
+    assert route_hybrid.validated_filters == {}
+
+
+def test_pipeline_metadata_filter_failure_switches_strategy():
+    mock_router = LLMQueryRouter(config=RetrievalConfig(groq_api_key=""))
+
+    # Keyword retriever: returns empty when filtered (filter failed), returns candidate when unfiltered
+    mock_keyword = MagicMock()
+    mock_keyword.retrieve.side_effect = lambda query=None, top_k=None, filters=None, **kwargs: (
+        [] if filters else [
+            CandidateChunk(
+                chunk_id="fallback-chunk-01",
+                text="Invoice workflow overview found via full-text search.",
+                score=8.0,
+                original_rank=1,
+                metadata={"document_type": "srs_section"},
+            )
+        ]
+    )
+
+    mock_reranker = MagicMock()
+    mock_reranker.rerank.side_effect = lambda query=None, candidates=None, top_k=None, **kwargs: candidates or []
+
+    mock_generator = MagicMock()
+    mock_generator.generate.return_value = RetrievalResponse(
+        question="Show TC-000001 invoice details",
+        answer="Found invoice details via unfiltered query fallback.",
+        status=RetrievalStatus.ANSWERED,
+        retrieval_route=RetrievalRoute.KEYWORD,
+        evidence=[
+            Evidence(
+                chunk_id="fallback-chunk-01",
+                document_type="srs_section",
+                supporting_text="Invoice workflow overview",
+            )
+        ],
+        limitations=[],
+    )
+
+    pipeline = AdvancedRetrievalPipeline(
+        router=mock_router,
+        keyword_retriever=mock_keyword,
+        reranker=mock_reranker,
+        generator=mock_generator,
+        qdrant_client=MagicMock(),
+    )
+
+    # Initial query has TC-000001 which sets a filter.
+    # The filter fails (returns []), so pipeline should invoke route_on_filter_failure,
+    # switch to unfiltered retrieval, find fallback-chunk-01, and return ANSWERED.
+    result = pipeline.run("Show TC-000001 invoice details")
+
+    assert result.status == RetrievalStatus.ANSWERED
+    assert len(result.evidence) == 1
+    assert result.evidence[0].chunk_id == "fallback-chunk-01"
+    assert result.metadata.get("filter_fallback_applied") is True
+

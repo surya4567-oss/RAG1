@@ -1,0 +1,2 @@
+category,query_count,context_precision,context_recall,faithfulness,answer_relevancy,answer_correctness,avg_retrieval_latency,avg_generation_latency
+Basic Retrieval,3,0.8608585858361848,1.0,1.0,0.9921662018727558,0.9407974020421302,73.72552286666662,27.456277333316393

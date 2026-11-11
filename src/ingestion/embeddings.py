@@ -3,7 +3,12 @@
 
 import gc
 import math
+import os
+from pathlib import Path
 from typing import List, Optional
+
+# Ensure HuggingFace cache uses drive E where ample space is available
+os.environ.setdefault("HF_HOME", str(Path(__file__).parent.parent.parent / ".cache" / "huggingface"))
 
 from src.ingestion.config import PipelineConfig, default_config
 from src.ingestion.logging_config import logger
@@ -27,12 +32,13 @@ class LocalBGEEmbeddings:
         import torch
         from sentence_transformers import SentenceTransformer
 
-        # Avoid silently falling back to CPU when CUDA was requested.
+        # Gracefully fall back to CPU if CUDA is requested on a host without GPU
         if self.device.startswith("cuda") and not torch.cuda.is_available():
-            raise RuntimeError(
-                "CUDA was configured but is unavailable. "
-                "Enable a GPU runtime in Google Colab."
+            logger.warning(
+                "CUDA was configured for embeddings but is unavailable on this machine. "
+                "Falling back to CPU."
             )
+            self.device = "cpu"
 
         logger.info(
             f"Loading embedding model '{self.model_name}' "

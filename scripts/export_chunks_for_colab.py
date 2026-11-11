@@ -85,6 +85,7 @@ def export_chunks(
                         record = {
                             "id": str(pt.id),
                             "text": text,
+                            "payload": payload,
                         }
                         f.write(json.dumps(record, ensure_ascii=False) + "\n")
                         exported_count += 1
@@ -127,7 +128,7 @@ def export_chunks(
                     collection_name=manager.collection_name,
                     limit=fetch_limit,
                     offset=next_offset,
-                    with_payload=["page_content", "text"],
+                    with_payload=True,
                     with_vectors=False,
                 )
 
@@ -140,6 +141,7 @@ def export_chunks(
                     record = {
                         "id": str(pt.id),
                         "text": text,
+                        "payload": payload,
                     }
                     f.write(json.dumps(record, ensure_ascii=False) + "\n")
                     exported_count += 1

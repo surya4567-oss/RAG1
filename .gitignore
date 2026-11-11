@@ -11,26 +11,36 @@ venv/
 ENV/
 env/
 
-# Environment variables
 # Environment files and secrets
 .env
 .env.*
 !.env.example
 
-# Large generated data
+# Large Model caches (HuggingFace, PyTorch, Transformers)
+.cache/
+hf_cache/
+
+# Large generated data & Qdrant databases
 data/chunks_for_colab.jsonl
 data/sparse_checkpoints/
-
-# Data outputs & persistence
 data/processed/
 data/quarantine/
 data/qdrant_db/
+data/data1/
 reports/
 
-# IDE and OS files
+# Evaluation run checkpoints and per-query logs
+.archify
+
+# Temporary, backup, and scratch files
+*.bak
+scratch/
+scratch_*.py
+
+# Tool and IDE/OS files
+.archify/
 .idea/
 .vscode/
 *.swp
 .DS_Store
 Thumbs.db
-data/data1/qdrant_db/

@@ -1,8 +1,13 @@
 """Local Cross-Encoder Reranker using BAAI/bge-reranker-base."""
 
 import gc
+import os
+from pathlib import Path
 from typing import List, Optional
 import torch
+
+# Ensure HuggingFace cache uses drive E where ample space is available
+os.environ.setdefault("HF_HOME", str(Path(__file__).parent.parent.parent / ".cache" / "huggingface"))
 
 from src.ingestion.logging_config import logger
 from src.retrieval.config import RetrievalConfig, default_retrieval_config
@@ -37,6 +42,7 @@ class LocalCrossEncoderReranker:
             self.model_name,
             max_length=512,
             device=self.device,
+            cache_folder=os.environ.get("HF_HOME"),
         )
         LocalCrossEncoderReranker._model = model
         logger.info(f"CrossEncoder model '{self.model_name}' loaded successfully.")

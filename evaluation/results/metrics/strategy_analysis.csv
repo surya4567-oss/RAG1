@@ -1,0 +1,2 @@
+strategy,query_count,retrieval_success_rate,context_precision,context_recall,answer_correctness,avg_retrieval_latency
+dense,3,1.0,0.8608585858361848,1.0,0.9407974020421302,73.72552286666662

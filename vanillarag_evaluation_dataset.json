@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "Q001",
+    "query": "What is the official document identifier of the Odoo ERP System Software Requirements Specification?",
+    "expected_answer": "ODOO-ERP-SRS-001",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q002",
+    "query": "What version and status are stated on the title page of the Odoo ERP System SRS?",
+    "expected_answer": "Version 1.0 — Baseline draft, with status 'For stakeholder review and approval'.",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q003",
+    "query": "What baseline date is recorded on the cover page of the Odoo ERP System SRS?",
+    "expected_answer": "11 October 2026",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q004",
+    "query": "What is the title of defect record BUG-000001?",
+    "expected_answer": "Issue in Purchase: Team-oriented transitional concept",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q005",
+    "query": "What severity level is assigned to defect record BUG-000003?",
+    "expected_answer": "Critical",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q006",
+    "query": "Who is the assigned developer for defect BUG-000002?",
+    "expected_answer": "Melissa Fletcher (Assigned To) / Juan Smith (Developer)",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q007",
+    "query": "Who reported defect BUG-000005 in the defect tracking system?",
+    "expected_answer": "Leon Sullivan",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q008",
+    "query": "What priority level is designated for defect BUG-000004?",
+    "expected_answer": "P2",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q009",
+    "query": "Which application module is defect BUG-000006 associated with?",
+    "expected_answer": "HR",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q010",
+    "query": "What is the current lifecycle status of defect BUG-000007?",
+    "expected_answer": "Reopened",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q011",
+    "query": "On what date was test execution EXEC-000001 performed?",
+    "expected_answer": "2025-09-11",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q012",
+    "query": "Which web browser was utilized during test execution EXEC-000002?",
+    "expected_answer": "Edge",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q013",
+    "query": "What operating system environment was used for test execution EXEC-000004?",
+    "expected_answer": "Ubuntu",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q014",
+    "query": "What was the total execution time in seconds for test execution EXEC-000003?",
+    "expected_answer": "287 seconds",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q015",
+    "query": "Which software build number was tested in test execution EXEC-000005?",
+    "expected_answer": "B-2069",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q016",
+    "query": "What execution outcome status was recorded for test run EXEC-000006?",
+    "expected_answer": "Failed",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q017",
+    "query": "What requirement ID is mapped to test case TC-000001?",
+    "expected_answer": "REQ-1924",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q018",
+    "query": "Which functional module is test case TC-000002 designed to validate?",
+    "expected_answer": "Quality",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q019",
+    "query": "What priority rating is assigned to test case TC-000004?",
+    "expected_answer": "Critical",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q020",
+    "query": "What is the automation lifecycle status of test case TC-000003?",
+    "expected_answer": "Draft",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q021",
+    "query": "What precondition is specified for test case TC-000008?",
+    "expected_answer": "The background job configured the invoice and successfully completed the transaction.",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q022",
+    "query": "What screen name is identified in the OCR capture for bug BUG-001585 in ocr_batch_001.json?",
+    "expected_answer": "Inventory Dashboard",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q023",
+    "query": "What module name is recorded in ocr_batch_001.json for test execution EXEC-002249?",
+    "expected_answer": "HR",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q024",
+    "query": "What automation framework is specified for test case TC-000001?",
+    "expected_answer": "Cypress",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q025",
+    "query": "What HTTP status code is reported in logs_001.txt for the failure associated with BUG-003596?",
+    "expected_answer": "404",
+    "category": "Basic Retrieval"
+  },
+  {
+    "id": "Q026",
+    "query": "According to the Odoo ERP SRS, what overarching purpose does the specification document serve?",
+    "expected_answer": "It establishes a common understanding of expected system behavior and quality among business stakeholders, implementation specialists, developers, testers, administrators, and support personnel.",
+    "category": "Semantic Queries"
+  },
+  {
+    "id": "Q027",
+    "query": "What fundamental security access principle governs the Operator user class in the SRS?",
+    "expected_answer": "Minimum rights for assigned duties, creating and processing only assigned operational records.",
+    "category": "Semantic Queries"
+  },
+  {
+    "id": "Q028",
+    "query": "In the SRS capability groupings, what specific modules fall under the Supply chain domain?",
+    "expected_answer": "Purchase, Inventory, Manufacturing, Quality, and Maintenance.",
+    "category": "Semantic Queries"
+  },
+  {
+    "id": "Q029",
+    "query": "What typical business records are handled by the Commercial capability group under the SRS?",
+    "expected_answer": "Lead, opportunity, quotation, order, contract, and receipt.",
+    "category": "Semantic Queries"
+  },
+  {
+    "id": "Q030",
+    "query": "What specific responsibilities and access scope are designated for Auditor users in the SRS?",
+    "expected_answer": "Review records, approvals, and reports under a strictly read-only scope across domain records.",
+    "category": "Semantic Queries"
+  },
+  {
+    "id": "Q031",
+    "query": "What constraint does the SRS mandate regarding transaction consistency during failed operations?",
+    "expected_answer": "Failed operations must not leave partial stock, accounting, or workflow transactions.",
+    "category": "Semantic Queries"
+  },
+  {
+    "id": "Q032",
+    "query": "How does the SRS outline the complete operational flow of the Lead-to-cash process?",
+    "expected_answer": "Capture and qualify a prospect, manage an opportunity, prepare a quotation, obtain approval, confirm the order, fulfill goods/services, issue the invoice, register payment, and reconcile accounts.",
+    "category": "Semantic Queries"
+  },
+  {
+    "id": "Q033",
+    "query": "What quantity matching rule is defined in the SRS for the Procure-to-pay workflow?",
+    "expected_answer": "Receipt and bill quantities are compared under the approved matching policy before registering payment.",
+    "category": "Semantic Queries"
+  },
+  {
+    "id": "Q034",
+    "query": "What operational data attributes must be recorded for every stock movement under the SRS?",
+    "expected_answer": "Product, quantity, unit, source location, destination location, date, responsible user, and linked source document.",
+    "category": "Semantic Queries"
+  },
+  {
+    "id": "Q035",
+    "query": "What change description was recorded in Document Control for Version 0.1 of the SRS?",
+    "expected_answer": "Initial compilation of domain requirements.",
+    "category": "Semantic Queries"
+  },
+  {
+    "id": "Q036",
+    "query": "Which test case is designed to verify that an API endpoint checks employee records when configuration settings are missing?",
+    "expected_answer": "TC-000005",
+    "category": "Semantic Queries"
+  },
+  {
+    "id": "Q037",
+    "query": "Find the test case where a sales representative processes a subscription renewal after verifying related documents.",
+    "expected_answer": "TC-000003",
+    "category": "Semantic Queries"
+  },
+  {
+    "id": "Q038",
+    "query": "What business operation is stated as the root cause for defect BUG-000001?",
+    "expected_answer": "The system processed the incoming shipment and successfully completed the transaction.",
+    "category": "Semantic Queries"
+  },
+  {
+    "id": "Q039",
+    "query": "What underlying operation led to the failure logged in defect BUG-000002 during CRM processing?",
+    "expected_answer": "The background job validated the subscription renewal and successfully completed the transaction.",
+    "category": "Semantic Queries"
+  },
+  {
+    "id": "Q040",
+    "query": "What operation triggered the AccessError reported in defect BUG-000005?",
+    "expected_answer": "Defect BUG-000005 does not report an AccessError (its root cause records that the sales representative escalated the incoming shipment triggering a workflow notification).",
+    "category": "Semantic Queries"
+  },
+  {
+    "id": "Q041",
+    "query": "How does the SRS define the functional scope of the Finance capability group?",
+    "expected_answer": "Accounting, invoices, payments, reconciliation, and tax.",
+    "category": "Semantic Queries"
+  },
+  {
+    "id": "Q042",
+    "query": "What supervisory oversight responsibilities are assigned to the Manager user class in the SRS?",
+    "expected_answer": "Review work queues, approve transactions within delegated authority, and monitor exceptions.",
+    "category": "Semantic Queries"
+  },
+  {
+    "id": "Q043",
+    "query": "What human resources scope is encompassed by the People capability group in the SRS?",
+    "expected_answer": "HR and Payroll, managing employee records, departments, contracts, and payslips.",
+    "category": "Semantic Queries"
+  },
+  {
+    "id": "Q044",
+    "query": "What operational responsibilities are assigned to the Warehouse / production user class in the SRS?",
+    "expected_answer": "Managing receipts, transfers, work orders, and checks within location and operation scope.",
+    "category": "Semantic Queries"
+  },
+  {
+    "id": "Q045",
+    "query": "What design governance policy does the SRS impose if standard Odoo functionality cannot meet requirements?",
+    "expected_answer": "Customizations require documented justification along with detailed documentation of custom models, fields, views, automations, and upgrade implications.",
+    "category": "Semantic Queries"
+  },
+  {
+    "id": "Q046",
+    "query": "Which defect has module 'Purchase', severity 'Major', and status 'Closed'?",
+    "expected_answer": "BUG-000766 (First defect matching module 'Purchase', severity 'Major', status 'Closed'; note: BUG-000001 has module 'Project' with title referencing Purchase)",
+    "category": "Metadata Filtering"
+  },
+  {
+    "id": "Q047",
+    "query": "Which defect is assigned to 'Melissa Fletcher' with priority 'P3' and status 'In Progress'?",
+    "expected_answer": "BUG-000002",
+    "category": "Metadata Filtering"
+  },
+  {
+    "id": "Q048",
+    "query": "Find the defect in module 'HR' that has severity 'Critical' and priority 'P1'.",
+    "expected_answer": "BUG-000072 (First defect matching module 'HR', severity 'Critical', priority 'P1'; note: BUG-000003 has module 'Website' with title referencing HR)",
+    "category": "Metadata Filtering"
+  },
+  {
+    "id": "Q049",
+    "query": "Which defect in module 'HR' is assigned to 'Cheryl Bishop' with status 'New' and priority 'P2'?",
+    "expected_answer": "BUG-000004 (Defect assigned to Cheryl Bishop with status 'New' and priority 'P2'; note: record module in CSV is 'Rental' while title references HR)",
+    "category": "Metadata Filtering"
+  },
+  {
+    "id": "Q050",
+    "query": "Which test execution ran on build 'B-5521' with browser 'Edge' on operating system 'Android'?",
+    "expected_answer": "EXEC-000001",
+    "category": "Metadata Filtering"
+  },
+  {
+    "id": "Q051",
+    "query": "What test execution ran on date '2025-08-24' with browser 'Edge' on 'Ubuntu' and achieved status 'Passed'?",
+    "expected_answer": "EXEC-000002",
+    "category": "Metadata Filtering"
+  },
+  {
+    "id": "Q052",
+    "query": "Which test execution had status 'Skipped', browser 'Edge', and operating system 'iOS'?",
+    "expected_answer": "EXEC-000003",
+    "category": "Metadata Filtering"
+  },
+  {
+    "id": "Q053",
+    "query": "Find the test execution on build 'B-2787' that resulted in status 'Blocked' using browser 'Firefox'.",
+    "expected_answer": "EXEC-000004",
+    "category": "Metadata Filtering"
+  },
+  {
+    "id": "Q054",
+    "query": "Which test case in module 'POS' has priority 'High' and status 'Review'?",
+    "expected_answer": "TC-000001",
+    "category": "Metadata Filtering"
+  },
+  {
+    "id": "Q055",
+    "query": "Find the test case in module 'Quality' with priority 'Medium' and status 'Review'.",
+    "expected_answer": "TC-000002",
+    "category": "Metadata Filtering"
+  },
+  {
+    "id": "Q056",
+    "query": "Which test case in module 'eCommerce' has priority 'Critical' and status 'Draft'?",
+    "expected_answer": "TC-000004",
+    "category": "Metadata Filtering"
+  },
+  {
+    "id": "Q057",
+    "query": "Find the test case in module 'Rental' associated with requirement identifier 'REQ-7360'.",
+    "expected_answer": "TC-000005",
+    "category": "Metadata Filtering"
+  },
+  {
+    "id": "Q058",
+    "query": "Which defect reported by 'Leon Sullivan' in module 'Helpdesk' carries priority 'P0'?",
+    "expected_answer": "BUG-000005 (Defect reported by Leon Sullivan carrying priority 'P0'; note: record module in CSV is 'Accounting' while title references Helpdesk)",
+    "category": "Metadata Filtering"
+  },
+  {
+    "id": "Q059",
+    "query": "Which test execution on build 'B-1458' resulted in status 'Failed' on browser 'Safari'?",
+    "expected_answer": "EXEC-000006",
+    "category": "Metadata Filtering"
+  },
+  {
+    "id": "Q060",
+    "query": "What test execution ran on '2026-07-10' using browser 'Chrome' on 'macOS' with status 'Failed'?",
+    "expected_answer": "EXEC-000007",
+    "category": "Metadata Filtering"
+  },
+  {
+    "id": "Q061",
+    "query": "Find the test case in module 'Documents' with priority 'Medium' and status 'Draft'.",
+    "expected_answer": "TC-000003",
+    "category": "Metadata Filtering"
+  },
+  {
+    "id": "Q062",
+    "query": "Which defect in module 'Studio' has severity 'Critical' and status 'Reopened'?",
+    "expected_answer": "BUG-000007 (Defect with severity 'Critical' and status 'Reopened'; note: record module in CSV is 'Accounting' while title references Studio)",
+    "category": "Metadata Filtering"
+  },
+  {
+    "id": "Q063",
+    "query": "Find the defect in module 'CRM' with priority 'P3' and status 'Resolved'.",
+    "expected_answer": "BUG-000008 (Defect with priority 'P3' and status 'Resolved'; note: record module in CSV is 'HR' while title references CRM)",
+    "category": "Metadata Filtering"
+  },
+  {
+    "id": "Q064",
+    "query": "Which defect in module 'Sales' is assigned to 'Brandon Perez' with status 'In Progress'?",
+    "expected_answer": "BUG-000009 (Defect assigned to Brandon Perez with status 'In Progress'; note: record module in CSV is 'POS' while title references Sales)",
+    "category": "Metadata Filtering"
+  },
+  {
+    "id": "Q065",
+    "query": "Find the defect in module 'Inventory' that has severity 'Major' and priority 'P1' assigned to 'Joshua Phillips'.",
+    "expected_answer": "BUG-000010 (Defect assigned to Joshua Phillips with severity 'Major' and priority 'P1'; note: record module in CSV is 'Website' while title references Inventory)",
+    "category": "Metadata Filtering"
+  },
+  {
+    "id": "Q066",
+    "query": "Retrieve the exact title of defect ID BUG-000010.",
+    "expected_answer": "Issue in Inventory: Networked web-enabled collaboration",
+    "category": "Keyword / Exact Match"
+  },
+  {
+    "id": "Q067",
+    "query": "What exact test case ID is mapped to requirement identifier REQ-1754?",
+    "expected_answer": "TC-000002",
+    "category": "Keyword / Exact Match"
+  },
+  {
+    "id": "Q068",
+    "query": "What exact execution ID is recorded for build number B-7391 on 2025-08-24?",
+    "expected_answer": "EXEC-000002",
+    "category": "Keyword / Exact Match"
+  },
+  {
+    "id": "Q069",
+    "query": "What exact database unique constraint name is cited in the database error for BUG-003596 in logs_001.txt?",
+    "expected_answer": "hr_unique_id",
+    "category": "Keyword / Exact Match"
+  },
+  {
+    "id": "Q070",
+    "query": "What exact Python source file path is reported in the traceback for BUG-003596 in logs_001.txt?",
+    "expected_answer": "/odoo/addons/hr/models/record.py",
+    "category": "Keyword / Exact Match"
+  },
+  {
+    "id": "Q071",
+    "query": "What exact line number in /odoo/addons/hr/models/record.py raised the exception for BUG-003596 in logs_001.txt?",
+    "expected_answer": "Line 158",
+    "category": "Keyword / Exact Match"
+  },
+  {
+    "id": "Q072",
+    "query": "What exact session ID is logged in the server log entry for BUG-003596 in logs_001.txt?",
+    "expected_answer": "0c5836b3-6ad1-49f5-a61a-fa3184412070",
+    "category": "Keyword / Exact Match"
+  },
+  {
+    "id": "Q073",
+    "query": "What exact error string is raised under Python Traceback for BUG-003596 in logs_001.txt?",
+    "expected_answer": "odoo.exceptions.AccessError: Access Denied: You do not have the required permissions.",
+    "category": "Keyword / Exact Match"
+  },
+  {
+    "id": "Q074",
+    "query": "What exact dialog box name appears in ocr_batch_001.json for bug BUG-001585?",
+    "expected_answer": "Confirm Spend?",
+    "category": "Keyword / Exact Match"
+  },
+  {
+    "id": "Q075",
+    "query": "What exact table name is listed in ocr_batch_001.json for execution EXEC-002249?",
+    "expected_answer": "Film List",
+    "category": "Keyword / Exact Match"
+  },
+  {
+    "id": "Q076",
+    "query": "What exact list of button names is recorded in ocr_batch_001.json for bug BUG-001585?",
+    "expected_answer": "Ago, Imagine, Bed, Agree, Author",
+    "category": "Keyword / Exact Match"
+  },
+  {
+    "id": "Q077",
+    "query": "What exact list of menus is visible in ocr_batch_001.json for bug BUG-001585?",
+    "expected_answer": "File, Edit, View, Reports, Configuration",
+    "category": "Keyword / Exact Match"
+  },
+  {
+    "id": "Q078",
+    "query": "What exact DETAIL value is reported in the database error for BUG-003596 in logs_001.txt?",
+    "expected_answer": "Key (name)=(Test_Record_001) already exists.",
+    "category": "Keyword / Exact Match"
+  },
+  {
+    "id": "Q079",
+    "query": "What exact dialog box text appears in ocr_batch_001.json for execution EXEC-017509?",
+    "expected_answer": "Confirm Life?",
+    "category": "Keyword / Exact Match"
+  },
+  {
+    "id": "Q080",
+    "query": "What exact table name is listed in ocr_batch_002.json for bug BUG-009386?",
+    "expected_answer": "Process List",
+    "category": "Keyword / Exact Match"
+  },
+  {
+    "id": "Q081",
+    "query": "What was the execution status of the test run linked to defect BUG-000001?",
+    "expected_answer": "Failed (Execution ID: EXEC-012473)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q082",
+    "query": "What requirement ID is verified by the test case linked to defect BUG-000001?",
+    "expected_answer": "REQ-9614 (Test Case ID: TC-003557)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q083",
+    "query": "What browser was used in the test execution linked to defect BUG-000002?",
+    "expected_answer": "Edge (Execution ID: EXEC-001114)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q084",
+    "query": "What module is assigned to the test case linked to defect BUG-000003?",
+    "expected_answer": "Rental (Test Case ID: TC-013900)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q085",
+    "query": "What was the execution time in seconds for the test execution linked to defect BUG-000004?",
+    "expected_answer": "74 seconds (Execution ID: EXEC-013356)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q086",
+    "query": "What priority level is assigned to the test case linked to defect BUG-000005?",
+    "expected_answer": "Medium (Test Case ID: TC-015032)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q087",
+    "query": "What operating system was used in the test execution associated with defect BUG-000006?",
+    "expected_answer": "macOS (Execution ID: EXEC-011957)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q088",
+    "query": "What requirement ID is verified by the test case linked to defect BUG-000007?",
+    "expected_answer": "REQ-9504 (Test Case ID: TC-017938)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q089",
+    "query": "What build number was tested in the test execution linked to defect BUG-000008?",
+    "expected_answer": "B-1312 (Execution ID: EXEC-012376)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q090",
+    "query": "What module is assigned to the test case linked to defect BUG-000009?",
+    "expected_answer": "Manufacturing (Test Case ID: TC-015171)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q091",
+    "query": "What is the title of the defect linked to test execution EXEC-012473?",
+    "expected_answer": "Issue in Purchase: Team-oriented transitional concept (Defect ID: BUG-000001)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q092",
+    "query": "What is the title of the defect linked to test execution EXEC-001114?",
+    "expected_answer": "Issue in CRM: Team-oriented value-added software (Defect ID: BUG-000002)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q093",
+    "query": "What screen name was captured in OCR for the test execution linked to defect BUG-001585?",
+    "expected_answer": "Inventory Dashboard (Execution ID: EXEC-002249)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q094",
+    "query": "What exception is reported in logs_001.txt for the test execution associated with BUG-003596?",
+    "expected_answer": "AccessError (Execution ID: EXEC-016067)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q095",
+    "query": "What requirement ID corresponds to the test case verified in test execution EXEC-000001?",
+    "expected_answer": "REQ-7270 (Test Case ID: TC-014298)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q096",
+    "query": "What requirement ID corresponds to the test case verified in test execution EXEC-000002?",
+    "expected_answer": "REQ-2619 (Test Case ID: TC-006128)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q097",
+    "query": "What is the lifecycle status of the test case verified in test execution EXEC-000003?",
+    "expected_answer": "Deprecated (Test Case ID: TC-003791)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q098",
+    "query": "What is the automation status of the test case verified in test execution EXEC-000004?",
+    "expected_answer": "Manual (Test Case ID: TC-013521)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q099",
+    "query": "What is the title of the defect associated with test case TC-003557?",
+    "expected_answer": "Issue in Purchase: Team-oriented transitional concept (Defect ID: BUG-000001)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q100",
+    "query": "What is the severity of the defect linked to test case TC-008797?",
+    "expected_answer": "Major (Defect ID: BUG-000002)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q101",
+    "query": "What dialog box was captured in OCR for the execution linked to bug BUG-003851?",
+    "expected_answer": "Confirm Life? (Execution ID: EXEC-017509)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q102",
+    "query": "What database unique constraint violation is logged in failure logs for execution EXEC-012473 in logs_005.txt?",
+    "expected_answer": "website_unique_id (associated with BUG-007041)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q103",
+    "query": "What root cause is recorded for the defect linked to test execution EXEC-004706?",
+    "expected_answer": "The warehouse operator configured the manufacturing order after verifying the related documents. The manager attempted to confirm the incoming shipment but the system raised a validation exception. The system processed the POS receipt which resulted in an AccessError. (Defect ID: BUG-000003)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q104",
+    "query": "What bug type is assigned to the defect linked to test execution EXEC-013356?",
+    "expected_answer": "UI/UX (Defect ID: BUG-000004)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q105",
+    "query": "Who is the developer assigned to the defect linked to test execution EXEC-009336?",
+    "expected_answer": "Kimberly Lopez (Assigned To) / James Padilla (Developer) (Defect ID: BUG-000005)",
+    "category": "Multi-hop Queries"
+  },
+  {
+    "id": "Q106",
+    "query": "What is the total number of defect records contained in defects_rows.csv?",
+    "expected_answer": "10,000",
+    "category": "Aggregation Queries"
+  },
+  {
+    "id": "Q107",
+    "query": "What is the total number of test cases recorded in testcases.csv?",
+    "expected_answer": "20,000",
+    "category": "Aggregation Queries"
+  },
+  {
+    "id": "Q108",
+    "query": "What is the total number of test executions documented in test_execution.csv?",
+    "expected_answer": "20,000",
+    "category": "Aggregation Queries"
+  },
+  {
+    "id": "Q109",
+    "query": "How many screenshot OCR records are contained within ocr_batch_001.json?",
+    "expected_answer": "1,400",
+    "category": "Aggregation Queries"
+  },
+  {
+    "id": "Q110",
+    "query": "How many failure log blocks are recorded in failure_logs/logs_001.txt?",
+    "expected_answer": "1,500",
+    "category": "Aggregation Queries"
+  },
+  {
+    "id": "Q111",
+    "query": "What is the total page count of the Odoo ERP System SRS PDF document?",
+    "expected_answer": "60 pages",
+    "category": "Aggregation Queries"
+  },
+  {
+    "id": "Q112",
+    "query": "How many defects in defects_rows.csv currently hold the status 'New'?",
+    "expected_answer": "2,072",
+    "category": "Aggregation Queries"
+  },
+  {
+    "id": "Q113",
+    "query": "How many defects in defects_rows.csv have reached the status 'Closed'?",
+    "expected_answer": "2,022",
+    "category": "Aggregation Queries"
+  },
+  {
+    "id": "Q114",
+    "query": "How many defects in defects_rows.csv are currently in 'In Progress' status?",
+    "expected_answer": "2,010",
+    "category": "Aggregation Queries"
+  },
+  {
+    "id": "Q115",
+    "query": "What is the total count of defects classified with 'Critical' severity in defects_rows.csv?",
+    "expected_answer": "2,533",
+    "category": "Aggregation Queries"
+  },
+  {
+    "id": "Q116",
+    "query": "What is the total count of defects classified with 'Major' severity in defects_rows.csv?",
+    "expected_answer": "2,557",
+    "category": "Aggregation Queries"
+  },
+  {
+    "id": "Q117",
+    "query": "How many test execution runs in test_execution.csv completed with status 'Passed'?",
+    "expected_answer": "5,008",
+    "category": "Aggregation Queries"
+  },
+  {
+    "id": "Q118",
+    "query": "How many test execution runs in test_execution.csv completed with status 'Failed'?",
+    "expected_answer": "4,929",
+    "category": "Aggregation Queries"
+  },
+  {
+    "id": "Q119",
+    "query": "How many test cases in testcases.csv belong to the 'POS' module?",
+    "expected_answer": "978",
+    "category": "Aggregation Queries"
+  },
+  {
+    "id": "Q120",
+    "query": "How many defects in defects_rows.csv are categorized under bug_type 'Security'?",
+    "expected_answer": "2,071",
+    "category": "Aggregation Queries"
+  },
+  {
+    "id": "Q121",
+    "query": "Between defect BUG-000001 and BUG-000003, which record has a higher severity level?",
+    "expected_answer": "BUG-000003 has higher severity (Critical compared to Major for BUG-000001).",
+    "category": "Comparison Queries"
+  },
+  {
+    "id": "Q122",
+    "query": "Between test execution EXEC-000001 and EXEC-000002, which test run took longer to complete?",
+    "expected_answer": "EXEC-000002 took longer (176 seconds compared to 92 seconds for EXEC-000001).",
+    "category": "Comparison Queries"
+  },
+  {
+    "id": "Q123",
+    "query": "Compare the priority levels of test cases TC-000001 and TC-000002.",
+    "expected_answer": "TC-000001 has High priority, whereas TC-000002 has Medium priority.",
+    "category": "Comparison Queries"
+  },
+  {
+    "id": "Q124",
+    "query": "Compare the final execution statuses of test executions EXEC-000001 and EXEC-000006.",
+    "expected_answer": "EXEC-000001 has status Passed, while EXEC-000006 has status Failed.",
+    "category": "Comparison Queries"
+  },
+  {
+    "id": "Q125",
+    "query": "Between defect BUG-000001 and BUG-000005, which has higher priority?",
+    "expected_answer": "BUG-000005 has higher priority (P0 compared to P3 for BUG-000001).",
+    "category": "Comparison Queries"
+  },
+  {
+    "id": "Q126",
+    "query": "Compare the browsers utilized in test executions EXEC-000006 and EXEC-000007.",
+    "expected_answer": "EXEC-000006 used Safari, while EXEC-000007 used Chrome.",
+    "category": "Comparison Queries"
+  },
+  {
+    "id": "Q127",
+    "query": "Compare the lifecycle status of test case TC-000003 with that of TC-000006.",
+    "expected_answer": "TC-000003 is in Draft status, while TC-000006 is Deprecated.",
+    "category": "Comparison Queries"
+  },
+  {
+    "id": "Q128",
+    "query": "Compare the operating systems on which test executions EXEC-000002 and EXEC-000003 were executed.",
+    "expected_answer": "EXEC-000002 was executed on Ubuntu, whereas EXEC-000003 was executed on iOS.",
+    "category": "Comparison Queries"
+  },
+  {
+    "id": "Q129",
+    "query": "Between defect BUG-000004 and BUG-000007, compare their current defect statuses.",
+    "expected_answer": "BUG-000004 has status New, while BUG-000007 has status Reopened.",
+    "category": "Comparison Queries"
+  },
+  {
+    "id": "Q130",
+    "query": "Compare the execution time in seconds between test runs EXEC-000007 and EXEC-000009.",
+    "expected_answer": "EXEC-000007 took 290 seconds, whereas EXEC-000009 took 93 seconds.",
+    "category": "Comparison Queries"
+  },
+  {
+    "id": "Q131",
+    "query": "On what date was defect BUG-000001 created, and on what date was it marked resolved?",
+    "expected_answer": "Created on 2026-07-13 and marked resolved on 2026-07-14.",
+    "category": "Temporal Queries"
+  },
+  {
+    "id": "Q132",
+    "query": "What exact execution date is recorded for test execution EXEC-000002?",
+    "expected_answer": "2025-08-24",
+    "category": "Temporal Queries"
+  },
+  {
+    "id": "Q133",
+    "query": "Was test execution EXEC-000001 run chronologically before or after test execution EXEC-000005?",
+    "expected_answer": "EXEC-000001 (2025-09-11) was executed before EXEC-000005 (2025-12-21).",
+    "category": "Temporal Queries"
+  },
+  {
+    "id": "Q134",
+    "query": "What captured_time timestamp is recorded in ocr_batch_001.json for execution EXEC-002249?",
+    "expected_answer": "1979-12-05T16:39:33",
+    "category": "Temporal Queries"
+  },
+  {
+    "id": "Q135",
+    "query": "What timestamp is recorded for the failure log entry of BUG-003596 in logs_001.txt?",
+    "expected_answer": "1973-06-05T07:17:25",
+    "category": "Temporal Queries"
+  },
+  {
+    "id": "Q136",
+    "query": "What is the recorded created_date for test case TC-000001?",
+    "expected_answer": "2025-04-26",
+    "category": "Temporal Queries"
+  },
+  {
+    "id": "Q137",
+    "query": "Was test execution EXEC-000004 executed before or after test execution EXEC-000006?",
+    "expected_answer": "EXEC-000006 (2026-02-07) was executed before EXEC-000004 (2026-04-06).",
+    "category": "Temporal Queries"
+  },
+  {
+    "id": "Q138",
+    "query": "What timestamp is logged in logs_002.txt for execution EXEC-002580?",
+    "expected_answer": "2023-03-07T17:31:09",
+    "category": "Temporal Queries"
+  },
+  {
+    "id": "Q139",
+    "query": "In Document Control of the Odoo ERP System SRS, on what date was Version 1.0 drafted?",
+    "expected_answer": "11 Oct 2026",
+    "category": "Temporal Queries"
+  },
+  {
+    "id": "Q140",
+    "query": "What anomaly exists between the status and the lifecycle dates for defect BUG-000004?",
+    "expected_answer": "BUG-000004 has status 'New', yet its resolved_date is already populated with 2026-07-14.",
+    "category": "Temporal Queries"
+  },
+  {
+    "id": "Q141",
+    "query": "What buttons are visible in the OCR screenshot record for bug BUG-001585 in ocr_batch_001.json?",
+    "expected_answer": "Ago, Imagine, Bed, Agree, Author",
+    "category": "OCR / UI Queries"
+  },
+  {
+    "id": "Q142",
+    "query": "What screen name is displayed in the OCR record for execution EXEC-017509 in ocr_batch_001.json?",
+    "expected_answer": "Studio Dashboard",
+    "category": "OCR / UI Queries"
+  },
+  {
+    "id": "Q143",
+    "query": "What dialog box prompt is recorded in ocr_batch_001.json for bug BUG-003851?",
+    "expected_answer": "Confirm Life?",
+    "category": "OCR / UI Queries"
+  },
+  {
+    "id": "Q144",
+    "query": "What menu items are visible in the OCR capture for bug BUG-001585 in ocr_batch_001.json?",
+    "expected_answer": "File, Edit, View, Reports, Configuration",
+    "category": "OCR / UI Queries"
+  },
+  {
+    "id": "Q145",
+    "query": "What warning message is recorded in ocr_batch_001.json for bug BUG-001585?",
+    "expected_answer": "The API endpoint attempted to confirm the manufacturing order and successfully completed the transaction.",
+    "category": "OCR / UI Queries"
+  },
+  {
+    "id": "Q146",
+    "query": "What error message is reported in the OCR record for bug BUG-001585 in ocr_batch_001.json?",
+    "expected_answer": "The user configured the POS receipt which resulted in an AccessError.",
+    "category": "OCR / UI Queries"
+  },
+  {
+    "id": "Q147",
+    "query": "What user action description was logged during screenshot capture for bug BUG-001585 in ocr_batch_001.json?",
+    "expected_answer": "The warehouse operator configured the incoming shipment but the system raised a validation exception. The system configured the manufacturing order and successfully completed the transaction.",
+    "category": "OCR / UI Queries"
+  },
+  {
+    "id": "Q148",
+    "query": "What screen name is recorded in ocr_batch_002.json for execution EXEC-002301?",
+    "expected_answer": "Accounting Dashboard",
+    "category": "OCR / UI Queries"
+  },
+  {
+    "id": "Q149",
+    "query": "What dialog box title appears in ocr_batch_002.json for bug BUG-008442?",
+    "expected_answer": "Confirm Forward?",
+    "category": "OCR / UI Queries"
+  },
+  {
+    "id": "Q150",
+    "query": "What buttons are captured in ocr_batch_002.json for execution EXEC-006588?",
+    "expected_answer": "No, Red, Probably, Necessary",
+    "category": "OCR / UI Queries"
+  },
+  {
+    "id": "Q151",
+    "query": "What Python exception type is logged for execution EXEC-016067 in failure log logs_001.txt?",
+    "expected_answer": "AccessError",
+    "category": "Failure Diagnosis"
+  },
+  {
+    "id": "Q152",
+    "query": "In failure log logs_001.txt for BUG-003596, what Python method was executing when the error occurred?",
+    "expected_answer": "action_confirm",
+    "category": "Failure Diagnosis"
+  },
+  {
+    "id": "Q153",
+    "query": "In logs_001.txt for BUG-003596, which source file and line number raised AccessError('Access Denied')?",
+    "expected_answer": "/odoo/odoo/models.py, line 1666",
+    "category": "Failure Diagnosis"
+  },
+  {
+    "id": "Q154",
+    "query": "What database unique constraint violation is reported for BUG-003596 in logs_001.txt?",
+    "expected_answer": "duplicate key value violates unique constraint \"hr_unique_id\"",
+    "category": "Failure Diagnosis"
+  },
+  {
+    "id": "Q155",
+    "query": "What HTTP status code was returned in failure log logs_001.txt for BUG-003596?",
+    "expected_answer": "404",
+    "category": "Failure Diagnosis"
+  },
+  {
+    "id": "Q156",
+    "query": "What session ID is recorded in the server log entry for BUG-003596 in logs_001.txt?",
+    "expected_answer": "0c5836b3-6ad1-49f5-a61a-fa3184412070",
+    "category": "Failure Diagnosis"
+  },
+  {
+    "id": "Q157",
+    "query": "What resolution hint is provided in failure log logs_001.txt for BUG-003596?",
+    "expected_answer": "The background job escalated the subscription renewal which resulted in an AccessError.",
+    "category": "Failure Diagnosis"
+  },
+  {
+    "id": "Q158",
+    "query": "What module is associated with the failure log entry for BUG-003596 in logs_001.txt?",
+    "expected_answer": "HR",
+    "category": "Failure Diagnosis"
+  },
+  {
+    "id": "Q159",
+    "query": "What HTTP status code is recorded in logs_002.txt for execution EXEC-002580?",
+    "expected_answer": "400",
+    "category": "Failure Diagnosis"
+  },
+  {
+    "id": "Q160",
+    "query": "What module is reported in the failure log for BUG-007637 in logs_002.txt?",
+    "expected_answer": "Documents",
+    "category": "Failure Diagnosis"
+  },
+  {
+    "id": "Q161",
+    "query": "What exception type is raised in logs_002.txt for BUG-007637?",
+    "expected_answer": "AccessError",
+    "category": "Failure Diagnosis"
+  },
+  {
+    "id": "Q162",
+    "query": "What database error constraint violation is reported in logs_005.txt for execution EXEC-012473?",
+    "expected_answer": "duplicate key value violates unique constraint \"website_unique_id\"",
+    "category": "Failure Diagnosis"
+  },
+  {
+    "id": "Q163",
+    "query": "Across all failure log files in the dataset, what single recurring Python exception type is reported in every log entry?",
+    "expected_answer": "AccessError",
+    "category": "Failure Diagnosis"
+  },
+  {
+    "id": "Q164",
+    "query": "In logs_001.txt for BUG-003596, what user action description is recorded in the header?",
+    "expected_answer": "The API endpoint calculated the transfer due to missing configuration settings.",
+    "category": "Failure Diagnosis"
+  },
+  {
+    "id": "Q165",
+    "query": "What resolution hint is given for BUG-007637 in failure log logs_002.txt?",
+    "expected_answer": "The sales representative attempted to confirm the subscription renewal triggering a workflow notification.",
+    "category": "Failure Diagnosis"
+  },
+  {
+    "id": "Q166",
+    "query": "What is the title of defect BUG-999999?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q167",
+    "query": "What is the execution date of test execution EXEC-999999?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q168",
+    "query": "What is the precondition for test case TC-999999?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q169",
+    "query": "What is the requirement description for requirement REQ-999999?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q170",
+    "query": "What test cases are associated with epic EPIC-999999?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q171",
+    "query": "What is the status of defect DEFECT#INVALID-001?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q172",
+    "query": "What is the execution time for test run RUN_2026_TEST_99?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q173",
+    "query": "What is the expected result for test case CASE#987654?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q174",
+    "query": "What is the full Python source code implementation of the _validate_permissions method in /odoo/odoo/models.py?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q175",
+    "query": "What is the email address of tester Alexander King in testcases.csv?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q176",
+    "query": "What is the root cause of failure for test execution EXEC-000001?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q177",
+    "query": "What defect was filed as a result of test execution EXEC-000002?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q178",
+    "query": "What is the employee salary recorded in the HR module test cases?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q179",
+    "query": "What is the total monetary revenue generated from sales orders in testcases.csv?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q180",
+    "query": "What was the outcome of test execution runs conducted in the year 2045?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q181",
+    "query": "What are the database root credentials used to connect to the Odoo ERP PostgreSQL database?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q182",
+    "query": "What error message appears in the OCR screenshot for test execution EXEC-999999?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q183",
+    "query": "What traceback is logged in the failure logs for test case TC-999999?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q184",
+    "query": "What is the network latency in milliseconds between the Odoo application server and database during EXEC-000001?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q185",
+    "query": "What are the CPU model and RAM specifications of the test execution runner for EXEC-000005?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q186",
+    "query": "What is the git commit hash corresponding to build B-5521?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q187",
+    "query": "What customer credit card numbers are stored in POS receipt test cases?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q188",
+    "query": "According to the SRS, what are the feature updates scheduled for Version 3.0?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q189",
+    "query": "What is the total test code coverage percentage of the Odoo ERP codebase?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q190",
+    "query": "What defects are currently logged under the Blockchain module?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q191",
+    "query": "What test cases were executed using Internet Explorer 6?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q192",
+    "query": "What is the physical street address of the main warehouse mentioned in inventory test cases?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q193",
+    "query": "What is the total file size in gigabytes of the production database backup?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q194",
+    "query": "What performance rating was given to tester William Campbell in his annual review?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q195",
+    "query": "What is the verified resolution date for defect BUG-000004 considering that its lifecycle status is New?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q196",
+    "query": "What is the underlying root cause of the AccessError in BUG-003596 beyond the logged permission check?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q197",
+    "query": "What error message is displayed in the OCR screenshot for an execution with an empty error message field?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q198",
+    "query": "What warning message is displayed in the OCR screenshot for an execution with an empty warning message field?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q199",
+    "query": "What is the release date of Odoo ERP version 20.0 in the SRS?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  },
+  {
+    "id": "Q200",
+    "query": "What is the customer phone number associated with quotations in sales test cases?",
+    "expected_answer": "Insufficient evidence in the provided dataset.",
+    "category": "Edge Cases / Unanswerable Queries"
+  }
+]
